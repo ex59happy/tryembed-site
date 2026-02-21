@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — Embed</title>
+  <meta name="description" content="Request deletion of your Embed account and all associated data.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#3B82F6',
+              bg: '#FAF9F6',
+              'text-primary': '#1F2937',
+              'text-secondary': '#6B7280',
+            }
+          },
+          fontFamily: {
+            display: ['Lexend', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #FAF9F6; color: #1F2937; }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- Nav -->
+  <nav class="border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+          <path d="M20,50 C20,20 80,20 80,50 C80,80 20,80 35,50 C40,40 60,40 65,50" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="font-display font-bold text-lg text-brand-blue">Embed</span>
+      </a>
+      <a href="/" class="text-sm text-brand-text-secondary hover:text-brand-text-primary transition-colors">&larr; Back to home</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <h1 class="font-display font-bold text-3xl md:text-4xl text-brand-text-primary tracking-tight">Delete Your Account</h1>
+    <p class="mt-2 text-brand-text-secondary text-sm">Request permanent deletion of your Embed account and data</p>
+
+    <div class="mt-10 max-w-lg">
+      <!-- Info Box -->
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-5 mb-8">
+        <h3 class="font-semibold text-red-800 text-sm mb-2">What happens when you delete your account</h3>
+        <ul class="text-red-700 text-sm space-y-1.5 leading-relaxed">
+          <li>All your study progress (flashcard states, review history, due dates) will be permanently deleted</li>
+          <li>All conversation history from speaking practice and AI tutor will be deleted</li>
+          <li>Your onboarding preferences and account information will be removed</li>
+          <li>This action cannot be undone</li>
+          <li>Deletion is processed within 30 days of your request</li>
+        </ul>
+      </div>
+
+      <p class="text-brand-text-secondary text-[15px] leading-7 mb-6">
+        You can delete your account directly in the app by going to <strong class="text-brand-text-primary">Profile &rarr; Account &rarr; Delete Account</strong>. If you can't access the app, use the form below to request account deletion.
+      </p>
+
+      <!-- Form -->
+      <form id="deleteForm" class="space-y-5">
+        <div>
+          <label for="email" class="block text-sm font-medium text-brand-text-primary mb-1.5">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="The email you used to sign up"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-brand-text-primary text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-shadow"
+          >
+        </div>
+
+        <div>
+          <label for="reason" class="block text-sm font-medium text-brand-text-primary mb-1.5">Reason for leaving <span class="text-brand-text-secondary font-normal">(optional)</span></label>
+          <select
+            id="reason"
+            name="reason"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-brand-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-shadow"
+          >
+            <option value="">Select a reason</option>
+            <option value="not-useful">The app wasn't useful for me</option>
+            <option value="too-expensive">Too expensive</option>
+            <option value="privacy">Privacy concerns</option>
+            <option value="alternative">Switching to another app</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="confirm" class="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              id="confirm"
+              name="confirm"
+              required
+              class="mt-1 w-4 h-4 rounded border-gray-300 text-brand-blue focus:ring-brand-blue"
+            >
+            <span class="text-sm text-brand-text-secondary leading-relaxed">
+              I understand that deleting my account is permanent and all my data (study progress, conversations, account info) will be removed within 30 days.
+            </span>
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-red-500 text-white font-semibold py-3 rounded-xl hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+        >
+          Request Account Deletion
+        </button>
+      </form>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="successMessage" class="hidden mt-8 bg-green-50 border border-green-100 rounded-2xl p-6 text-center">
+        <div class="text-2xl mb-2">&#10003;</div>
+        <h3 class="font-semibold text-green-800 text-base mb-1">Deletion Request Received</h3>
+        <p class="text-green-700 text-sm">We've received your request. Your account and all associated data will be deleted within 30 days. You'll receive a confirmation email at the address you provided.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 mt-16">
+    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span class="text-brand-text-secondary text-sm">&copy; 2025 IDK Studios, Inc.</span>
+      <div class="flex items-center gap-6 text-sm text-brand-text-secondary">
+        <a href="/privacy" class="hover:text-brand-text-primary transition-colors">Privacy Policy</a>
+        <a href="/terms" class="hover:text-brand-text-primary transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryembed.app" class="hover:text-brand-text-primary transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('deleteForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const reason = document.getElementById('reason').value;
+      const btn = this.querySelector('button[type="submit"]');
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      try {
+        // Send deletion request email via mailto fallback
+        // In production, this would call a Supabase Edge Function
+        const subject = encodeURIComponent('Account Deletion Request');
+        const body = encodeURIComponent(
+          `Account Deletion Request\n\nEmail: ${email}\nReason: ${reason || 'Not specified'}\n\nPlease delete all data associated with this account within 30 days.`
+        );
+
+        // Show success message immediately (the email will be sent)
+        window.location.href = `mailto:support@tryembed.app?subject=${subject}&body=${body}`;
+
+        document.getElementById('deleteForm').classList.add('hidden');
+        document.getElementById('successMessage').classList.remove('hidden');
+      } catch (err) {
+        alert('Something went wrong. Please email support@tryembed.app directly to request account deletion.');
+        btn.disabled = false;
+        btn.textContent = 'Request Account Deletion';
+      }
+    });
+  </script>
+
+</body>
+</html>

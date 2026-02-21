@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed — Skip the games. Learn the language.</title>
+  <meta name="description" content="Master vocabulary with spaced repetition. Practice speaking with AI. No streaks, no lives, no gimmicks.">
+  <meta name="theme-color" content="#FAF9F6">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Embed — Skip the games. Learn the language.">
+  <meta property="og:description" content="Master vocabulary with spaced repetition. Practice speaking with AI. No streaks, no lives, no gimmicks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tryembed.com">
+
+  <!-- Apple Smart App Banner (update with real App Store ID when available) -->
+  <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#3B82F6',
+              'blue-light': '#EFF6FF',
+              bg: '#FAF9F6',
+              card: '#FFFFFF',
+              'text-primary': '#1F2937',
+              'text-secondary': '#6B7280',
+            }
+          },
+          fontFamily: {
+            display: ['Lexend', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            jp: ['Noto Sans JP', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #FAF9F6; color: #1F2937; }
+
+    /* Screenshot placeholder styling */
+    .phone-frame {
+      width: 280px;
+      height: 560px;
+      border-radius: 40px;
+      border: 8px solid #1F2937;
+      overflow: hidden;
+      background: #FFFFFF;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    }
+    .phone-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .phone-frame .placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+      color: #6B7280;
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Subtle float animation for hero phone */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+          <path d="M20,50 C20,20 80,20 80,50 C80,80 20,80 35,50 C40,40 60,40 65,50" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="font-display font-bold text-xl text-brand-blue">Embed</span>
+      </a>
+      <!-- Links -->
+      <div class="flex items-center gap-6">
+        <a href="#features" class="hidden sm:block text-sm text-brand-text-secondary hover:text-brand-text-primary transition-colors">Features</a>
+        <a href="#download" class="bg-brand-blue text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-600 transition-colors">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-brand-text-primary tracking-tight leading-tight">
+        Skip the games.<br>Learn the language.
+      </h1>
+      <p class="mt-5 text-brand-text-secondary text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
+        Master vocabulary with spaced repetition. Practice speaking with AI. No streaks, no lives, no gimmicks.
+      </p>
+
+      <!-- Download Buttons -->
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <!-- App Store -->
+        <a href="#" class="inline-flex items-center gap-2.5 bg-brand-text-primary text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors">
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+            <path d="M16.52 12.46c-.03-3.12 2.55-4.62 2.67-4.7-1.45-2.12-3.72-2.41-4.52-2.45-1.93-.2-3.76 1.13-4.74 1.13-.98 0-2.49-1.1-4.1-1.07-2.11.03-4.05 1.23-5.14 3.12-2.19 3.8-.56 9.42 1.57 12.5 1.04 1.51 2.29 3.2 3.92 3.14 1.57-.06 2.17-1.02 4.07-1.02 1.9 0 2.44 1.02 4.1.99 1.69-.03 2.77-1.54 3.8-3.05 1.2-1.75 1.69-3.44 1.72-3.53-.04-.02-3.3-1.27-3.33-5.03l-.02-.03zM13.39 3.36C14.24 2.33 14.82.96 14.66-.44c-1.2.05-2.65.8-3.51 1.81-.77.89-1.44 2.31-1.26 3.67 1.33.1 2.69-.68 3.5-1.68z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[10px] leading-none opacity-80">Download on the</div>
+            <div class="text-base font-semibold leading-tight">App Store</div>
+          </div>
+        </a>
+        <!-- Google Play -->
+        <a href="#" class="inline-flex items-center gap-2.5 bg-brand-text-primary text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors">
+          <svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor">
+            <path d="M1.22.56L11.35 11 1.22 21.44C.97 21.09.82 20.65.82 20.18V1.82c0-.47.15-.91.4-1.26zm1.1-.46L13.15 9.2l-2.68 2.68L1.1.56c.05-.02.1-.04.15-.04.36 0 .72.18 1.07.58zm11.85 10.02l2.7 1.56c.74.43.74 1.13 0 1.56l-2.7 1.56-2.94-2.94 2.94-2.74zM2.32 21.9c-.35.4-.71.58-1.07.58-.05 0-.1-.02-.15-.04l9.37-11.32 2.68 2.68L2.32 21.9z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[10px] leading-none opacity-80">Get it on</div>
+            <div class="text-base font-semibold leading-tight">Google Play</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Hero Phone Mockup -->
+      <div class="mt-12 md:mt-16 flex justify-center">
+        <div class="phone-frame float-animation">
+          <!-- Replace with: <img src="screenshots/dashboard.png" alt="Embed app dashboard"> -->
+          <div class="placeholder">
+            <div>
+              <div class="text-2xl mb-2">📱</div>
+              <div class="font-medium">Dashboard Screenshot</div>
+              <div class="text-xs mt-1 opacity-70">Replace with dashboard.png</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="features" class="py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-brand-text-primary text-center tracking-tight">
+        How it works
+      </h2>
+
+      <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-brand-blue-light flex items-center justify-center mb-5">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-brand-text-primary">Learn new words</h3>
+          <p class="mt-2 text-brand-text-secondary text-sm leading-relaxed">
+            Add vocabulary from curated decks organized by real-world topics.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-brand-blue-light flex items-center justify-center mb-5">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 4 23 10 17 10"/>
+              <polyline points="1 20 1 14 7 14"/>
+              <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-brand-text-primary">Review with science</h3>
+          <p class="mt-2 text-brand-text-secondary text-sm leading-relaxed">
+            SM2 spaced repetition shows you each word right before you'd forget it.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-brand-blue-light flex items-center justify-center mb-5">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+              <path d="M19 10v2a7 7 0 01-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-brand-text-primary">Practice speaking</h3>
+          <p class="mt-2 text-brand-text-secondary text-sm leading-relaxed">
+            Have real conversations with AI that adapts to your level.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE: FLASHCARDS ===== -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+        <!-- Phone -->
+        <div class="flex-shrink-0 order-2 md:order-1">
+          <div class="phone-frame">
+            <!-- Replace with: <img src="screenshots/flashcard.png" alt="Flashcard review"> -->
+            <div class="placeholder">
+              <div>
+                <div class="text-2xl mb-2">🗂️</div>
+                <div class="font-medium">Flashcard Screenshot</div>
+                <div class="text-xs mt-1 opacity-70">Replace with flashcard.png</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="order-1 md:order-2 text-center md:text-left">
+          <span class="text-brand-blue font-semibold text-xs tracking-widest uppercase">Flashcards</span>
+          <h2 class="mt-3 font-display font-bold text-3xl md:text-4xl text-brand-text-primary tracking-tight leading-tight">
+            Remember everything<br>you learn
+          </h2>
+          <p class="mt-4 text-brand-text-secondary text-base md:text-lg leading-relaxed max-w-md">
+            SM2 spaced repetition shows you each word right before you'd forget it. No cramming, no wasted time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE: SPEAKING ===== -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+        <!-- Text -->
+        <div class="text-center md:text-left">
+          <span class="text-brand-blue font-semibold text-xs tracking-widest uppercase">Speaking</span>
+          <h2 class="mt-3 font-display font-bold text-3xl md:text-4xl text-brand-text-primary tracking-tight leading-tight">
+            Have real conversations<br>from day one
+          </h2>
+          <p class="mt-4 text-brand-text-secondary text-base md:text-lg leading-relaxed max-w-md">
+            Practice real scenarios with an AI that adapts to your level. Restaurant orders, hotel check-ins, job interviews.
+          </p>
+        </div>
+        <!-- Phone -->
+        <div class="flex-shrink-0">
+          <div class="phone-frame">
+            <!-- Replace with: <img src="screenshots/speaking.png" alt="Speaking practice conversation"> -->
+            <div class="placeholder">
+              <div>
+                <div class="text-2xl mb-2">🎙️</div>
+                <div class="font-medium">Speaking Screenshot</div>
+                <div class="text-xs mt-1 opacity-70">Replace with speaking.png</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section id="download" class="py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-brand-text-primary tracking-tight">
+        Start learning for free
+      </h2>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#" class="inline-flex items-center gap-2.5 bg-brand-text-primary text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors">
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+            <path d="M16.52 12.46c-.03-3.12 2.55-4.62 2.67-4.7-1.45-2.12-3.72-2.41-4.52-2.45-1.93-.2-3.76 1.13-4.74 1.13-.98 0-2.49-1.1-4.1-1.07-2.11.03-4.05 1.23-5.14 3.12-2.19 3.8-.56 9.42 1.57 12.5 1.04 1.51 2.29 3.2 3.92 3.14 1.57-.06 2.17-1.02 4.07-1.02 1.9 0 2.44 1.02 4.1.99 1.69-.03 2.77-1.54 3.8-3.05 1.2-1.75 1.69-3.44 1.72-3.53-.04-.02-3.3-1.27-3.33-5.03l-.02-.03zM13.39 3.36C14.24 2.33 14.82.96 14.66-.44c-1.2.05-2.65.8-3.51 1.81-.77.89-1.44 2.31-1.26 3.67 1.33.1 2.69-.68 3.5-1.68z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[10px] leading-none opacity-80">Download on the</div>
+            <div class="text-base font-semibold leading-tight">App Store</div>
+          </div>
+        </a>
+        <a href="#" class="inline-flex items-center gap-2.5 bg-brand-text-primary text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors">
+          <svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor">
+            <path d="M1.22.56L11.35 11 1.22 21.44C.97 21.09.82 20.65.82 20.18V1.82c0-.47.15-.91.4-1.26zm1.1-.46L13.15 9.2l-2.68 2.68L1.1.56c.05-.02.1-.04.15-.04.36 0 .72.18 1.07.58zm11.85 10.02l2.7 1.56c.74.43.74 1.13 0 1.56l-2.7 1.56-2.94-2.94 2.94-2.74zM2.32 21.9c-.35.4-.71.58-1.07.58-.05 0-.1-.02-.15-.04l9.37-11.32 2.68 2.68L2.32 21.9z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[10px] leading-none opacity-80">Get it on</div>
+            <div class="text-base font-semibold leading-tight">Google Play</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-gray-200">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <svg width="20" height="20" viewBox="0 0 100 100" fill="none">
+          <path d="M20,50 C20,20 80,20 80,50 C80,80 20,80 35,50 C40,40 60,40 65,50" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="font-display font-semibold text-sm text-brand-blue">Embed</span>
+        <span class="text-brand-text-secondary text-sm ml-2">&copy; 2025 IDK Studios, Inc.</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-brand-text-secondary">
+        <a href="/privacy" class="hover:text-brand-text-primary transition-colors">Privacy Policy</a>
+        <a href="/terms" class="hover:text-brand-text-primary transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryembed.app" class="hover:text-brand-text-primary transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
